@@ -1,3 +1,6 @@
+#ifndef __CORE__H__
+#define __CORE__H__
+
 #include<stdio.h>
 #include<signal.h>
 #include<pthread.h>
@@ -9,9 +12,9 @@
 enum Operation{ADD = 0, SUB, MUL, DIV};
 enum Status{TODO = 0, INPROGRESS, DONE};
 
-sem_t mutex[TASKS];
-pthread_mutex_t lock;
-int gTask;
+// sem_t mutex[TASKS];
+// pthread_mutex_t lock;
+// int gTask;
 
 typedef struct task_t{
     int taskId;
@@ -43,3 +46,5 @@ void initTasks(void);
 void queueTasks(input *list, int len);
 void registerWorkQueue(int );
 void taskInsertion(task *ptr, int taskId);
+
+#endif

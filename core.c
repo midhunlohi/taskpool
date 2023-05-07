@@ -1,7 +1,11 @@
 #include "core.h"
 
+sem_t mutex[TASKS];
+pthread_mutex_t lock;
+int gTask;
+
 task *headPtr = NULL;
-extern int gTask;
+//extern int gTask;
 work **workArray = NULL;
 extern int (*fPtrArray[])(int, int);
 
